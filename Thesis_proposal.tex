@@ -26,7 +26,7 @@
 \usepackage{longtable} % tables that can span several pages
 \usepackage[bf]{caption} % caption: FIG in bold
 \usepackage{fancyhdr} % For the headers
-\usepackage[onehalfspacing]{setspace} % For 1.5 spacing
+\usepackage{setspace} % For 1.5 spacing
 
 \newcommand{\numberedchapter}{ % Preparation for numbered chapters
 	\cleardoublepage % To make sure the previous headers are passed
@@ -94,6 +94,7 @@
 %	PREAMBLE PAGES (comment out unnecessary pages)
 %----------------------------------------------------------------------------------------
 
+\spacing{1.5} % 1.5 spacing with respect to Microsoft Word definition (1.5 x single spacing)
 \pagestyle{fancy} % Changes the headers
 \renewcommand{\chaptermark}[1]{ \markboth{#1}{}} % Getting the chapter name right
 \renewcommand{\sectionmark}[1]{\markright{\thesection\; #1}} % Getting the section name right
@@ -115,7 +116,6 @@
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \mainmatter % Begin numeric (1,2,3...) page numbering
-\doublespacing % Double spacing
 
 \numberedchapter
 \input{MainText/chapter1} % Import your chapters here
