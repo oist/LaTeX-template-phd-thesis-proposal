@@ -24,10 +24,18 @@
 \graphicspath{{./Images/}} % Specifies the directory where pictures are stored
 
 \usepackage{longtable} % tables that can span several pages
-\usepackage[bf]{caption} % caption: FIG in bold
+\usepackage[bf, font={sf, footnotesize}]{caption} % caption: FIG in bold + sans serif + 10pt
 \usepackage{fancyhdr} % For the headers
 \usepackage{setspace} % For 1.5 spacing
 \usepackage{mathptmx} % For Times New Roman
+\usepackage{helvet} % For Helvetica (equivalent)
+
+\makeatletter
+\renewenvironment{table}%
+  {\renewcommand\familydefault\sfdefault % To make table use sans serif by default
+   \@float{table}\footnotesize} % To make table use 10pt (footnotesize for 12pt)
+  {\end@float}
+\makeatother
 
 \newcommand{\numberedchapter}{ % Preparation for numbered chapters
 	\cleardoublepage % To make sure the previous headers are passed
