@@ -1,12 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OIST Doctoral Thesis - Final bound version
+% OIST Thesis Proposal 
 % LaTeX Template
-% Version 0.2 (2016/04/06)
-%
-% This version is the final binding version which will be published.
+% Version 1.0 (2023/06/09)
 %
 % Original author:
 % Jeremie Gillet
+% Contributors:
+% Fabian Hillebrand
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -24,9 +24,18 @@
 \graphicspath{{./Images/}} % Specifies the directory where pictures are stored
 
 \usepackage{longtable} % tables that can span several pages
-\usepackage[bf]{caption} % caption: FIG in bold
+\usepackage[bf, font={sf, footnotesize}]{caption} % caption: FIG in bold + sans serif + 10pt
 \usepackage{fancyhdr} % For the headers
-\usepackage[onehalfspacing]{setspace} % For 1.5 spacing
+\usepackage{setspace} % For 1.5 spacing
+\usepackage{mathptmx} % For Times New Roman
+\usepackage{helvet} % For Helvetica (equivalent)
+
+\makeatletter
+\renewenvironment{table}%
+  {\renewcommand\familydefault\sfdefault % To make table use sans serif by default
+   \@float{table}\footnotesize} % To make table use 10pt (footnotesize for 12pt)
+  {\end@float}
+\makeatother
 
 \newcommand{\numberedchapter}{ % Preparation for numbered chapters
 	\cleardoublepage % To make sure the previous headers are passed
@@ -94,6 +103,7 @@
 %	PREAMBLE PAGES (comment out unnecessary pages)
 %----------------------------------------------------------------------------------------
 
+\spacing{1.5} % 1.5 spacing with respect to Microsoft Word definition (1.5 x single spacing)
 \pagestyle{fancy} % Changes the headers
 \renewcommand{\chaptermark}[1]{ \markboth{#1}{}} % Getting the chapter name right
 \renewcommand{\sectionmark}[1]{\markright{\thesection\; #1}} % Getting the section name right
@@ -115,7 +125,6 @@
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \mainmatter % Begin numeric (1,2,3...) page numbering
-\doublespacing % Double spacing
 
 \numberedchapter
 \input{MainText/chapter1} % Import your chapters here
